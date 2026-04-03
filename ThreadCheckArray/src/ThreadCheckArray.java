@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * solves the subset sum problem using recursive backtracking in a multiple thread environment.
+ */
 public class ThreadCheckArray implements Runnable 
 {
 	private boolean flag;
@@ -8,6 +11,9 @@ public class ThreadCheckArray implements Runnable
 	ArrayList<Integer> arrayList;
 	int b;
 	
+	/**
+	 * @param sd Shared data container for inputs and results.
+	 */
 	public ThreadCheckArray(SharedData sd) 
 	{
 		this.sd = sd;	
@@ -19,6 +25,11 @@ public class ThreadCheckArray implements Runnable
 		winArray = new boolean[arrayList.size()];
 	}
 	
+	/**
+	 * Recursive search for a subset that sums to {@code b}.
+	 * @param n Current element index.
+	 * @param b Remaining target sum.
+	 */
 	void rec(int n, int b)
 	{
 		synchronized (sd) 
@@ -52,6 +63,9 @@ public class ThreadCheckArray implements Runnable
 		rec(n-1, b);
 	}
 
+	/**
+	 * Entry point, splits search space between thread1 (include last) and others (exclude last).
+	 */
 	public void run() {
 		if (arrayList.size() != 1)
 			if (Thread.currentThread().getName().equals("thread1"))
