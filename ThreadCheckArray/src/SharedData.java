@@ -23,7 +23,7 @@ public class SharedData
 		this.winArray = winArray;
 	}
 
-	public ArrayList<Integer>  getArrayList() 
+	public ArrayList<Integer> getArrayList() 
 	{
 		return array;
 	}
