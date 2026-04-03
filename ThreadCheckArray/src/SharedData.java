@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+
+ /**
+ * a container used to share data between threads 
+ * it hold the variables of the class inside it so threads can communicate
+ */
 public class SharedData 
 {
 	private ArrayList<Integer> array;
@@ -8,6 +13,7 @@ public class SharedData
 	private final int b;
 	
 	/**
+	 * this is a simple constructor 
 	 * @param array
 	 * @param b
 	 */

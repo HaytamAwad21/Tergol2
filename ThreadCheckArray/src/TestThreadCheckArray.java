@@ -1,7 +1,11 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-
+/**
+ * runs the program
+ * reads input from the user and creates threads
+ * and prints the result based on the calculation
+ */
 public class TestThreadCheckArray {
 	public static void main(String[] args) {
 		try (Scanner input = new Scanner(System.in)) {

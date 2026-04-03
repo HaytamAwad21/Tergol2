@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"SharedData"},{"p":"<Unnamed>","l":"TestThreadCheckArray"},{"p":"<Unnamed>","l":"ThreadCheckArray"}];updateSearchResults();
