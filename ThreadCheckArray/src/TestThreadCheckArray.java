@@ -22,13 +22,20 @@ public class TestThreadCheckArray {
 			num = input.nextInt();
 			
 			SharedData sd = new SharedData(arrayList, num);
-			
+			/**
+             * creates and starts threads to process the data
+             */
 			thread1 = new Thread(new ThreadCheckArray(sd), "thread1");
 			thread2 = new Thread(new ThreadCheckArray(sd), "thread2");
 			thread1.start();
 			thread2.start();
+			
+			/**
+	        * waits for both threads to finish
+	        */
 			try 
 			{
+				
 				thread1.join();
 				thread2.join();
 			} 
@@ -36,13 +43,19 @@ public class TestThreadCheckArray {
 			{
 				e.printStackTrace();
 			}
+			/**
+             * checks if a solution was found
+             */
 			if (!sd.getFlag())
 			{
 				System.out.println("Sorry");
 				return;
 			}
             System.out.println("Solution for b : " + sd.getB() + ",n = " + sd.getArrayList().size());
-			System.out.print("I:    ");
+            /**
+             * prints indexes
+             */
+            System.out.print("I:    ");
             for (int index = 0; index < sd.getArrayList().size(); index++)
 				System.out.print(index + "    ");
 			System.out.println();
